@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,10 +14,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.media.MediaPlayer;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class Activity2 extends AppCompatActivity {
 
-
+    MediaPlayer mediaplayer;
     boolean threadIsRunning;
 
     @Override
@@ -48,26 +51,11 @@ public class Activity2 extends AppCompatActivity {
                     myButton.setText("DISPARAITRE");
                 }
 
-            }
+
+
+
+        }
         });
-        Button myButton3 = findViewById(R.id.buttonLoadData);
-        myButton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.e("DEVE0304", "Button clicked");
-                Intent myIntent = new Intent(view.getContext(), Activity2.class);
-                // Exception
-                try{
-                    int nbr = 25/0;
-                    throw new MyCustomException("My Exception message");
-                }catch (MyCustomException e){
-
-                }
-            }
-
-
-        });
-
 
     }
 
@@ -139,12 +127,38 @@ public class Activity2 extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "Retrieved value : " + Integer.toString(retrievedInt), Toast.LENGTH_LONG).show();
     };
-
-    public class MyCustomException extends Exception{
-        public MyCustomException(String errorMessage){
-            super(errorMessage);
+    public void Erreur(View view){
+        // Exception
+        try{
+            int nbr = 25/0;
+        }catch (Exception e){
+            System.out.print(e.getMessage());
         }
     }
+
+    public void MediaPlayer(View view){
+            mediaplayer = MediaPlayer.create(this,R.raw.sonnerie);
+            mediaplayer.start();
+    };
+
+    public void Afficherjson(View view){
+        try{
+         String myJsonString = "LALA";
+        JSONObject myStringReader = new JSONObject(myJsonString);
+        final JSONArray geodata = myStringReader.getJSONArray("geodata");
+        final JSONObject person = geodata.getJSONObject(0);
+        Log.e("DEVE0304", "MainActivity.testJson() : " + person.getString("name"));
+        int aJsonInteger = myStringReader.getInt("INTEGERNAME");
+        String aJsonString = myStringReader.getString("STRINGNAME");
+            System.out.print(aJsonInteger);
+            System.out.print(aJsonString);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+
+};
+
+
 
 
 
