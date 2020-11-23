@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.media.MediaPlayer;
 
 public class Activity2 extends AppCompatActivity {
 
@@ -47,16 +48,26 @@ public class Activity2 extends AppCompatActivity {
                     myButton.setText("DISPARAITRE");
                 }
 
-
             }
         });
-        // Exception
-        try{
-            int nbr = 25/0;
-            throw new MyCustomException("My Exception message");
-        }catch (MyCustomException e){
+        Button myButton3 = findViewById(R.id.buttonLoadData);
+        myButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("DEVE0304", "Button clicked");
+                Intent myIntent = new Intent(view.getContext(), Activity2.class);
+                // Exception
+                try{
+                    int nbr = 25/0;
+                    throw new MyCustomException("My Exception message");
+                }catch (MyCustomException e){
 
-        }
+                }
+            }
+
+
+        });
+
 
     }
 
