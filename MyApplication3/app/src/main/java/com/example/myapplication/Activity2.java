@@ -151,7 +151,7 @@ public class Activity2 extends AppCompatActivity {
                                 + "," + "\"" + "Id" + "\":" + id + "," + "\"" + "Curriculum"
                                 + "\":" + "\"" + curriculum+ "\"" + "}​​​​​​​";
         JSONObject myStringReader = new JSONObject(myJsonString);
-        int aJsonInteger = myStringReader.getInt("id");
+        int aJsonInteger = myStringReader.getInt("Id");
         Log.e("DEVE0304", "MainActivity.testJson() : " + myStringReader.getString("name"));
         } catch (Exception e) {
             Log.e("TAG", "erreur"+ e.getMessage());
