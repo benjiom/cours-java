@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity2">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question 5" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttondisparaitre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:onClick="runThread"
+                android:text="Disparaitre" />
+
+            <Button
+                android:id="@+id/buttonapparaitre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:onClick="stopThread"
+                android:text="COUCOU" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/myDataField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonLoadData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="loadData"
+                android:text="Load data"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/buttonSaveData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="saveData"
+                android:text="Save data"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
