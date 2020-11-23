@@ -132,7 +132,7 @@ public class Activity2 extends AppCompatActivity {
         try{
             int nbr = 25/0;
         }catch (Exception e){
-            System.out.print(e.getMessage());
+            System.out.print("Erreur: " + e.getMessage());
         }
     }
 
