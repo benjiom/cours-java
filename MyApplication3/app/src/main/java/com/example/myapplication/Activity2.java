@@ -143,17 +143,18 @@ public class Activity2 extends AppCompatActivity {
 
     public void Afficherjson(View view){
         try{
-         String myJsonString = "LALA";
+            String Name ="Benjamin";
+            int id =1;
+            String curriculum ="TOP";
+             String myJsonString =
+                        "{​​​​​​​\"" + "Name" + "\":" + "\"" + Name + "\""
+                                + "," + "\"" + "Id" + "\":" + id + "," + "\"" + "Curriculum"
+                                + "\":" + "\"" + curriculum+ "\"" + "}​​​​​​​";
         JSONObject myStringReader = new JSONObject(myJsonString);
-        final JSONArray geodata = myStringReader.getJSONArray("geodata");
-        final JSONObject person = geodata.getJSONObject(0);
-        Log.e("DEVE0304", "MainActivity.testJson() : " + person.getString("name"));
-        int aJsonInteger = myStringReader.getInt("INTEGERNAME");
-        String aJsonString = myStringReader.getString("STRINGNAME");
-            System.out.print(aJsonInteger);
-            System.out.print(aJsonString);
+        int aJsonInteger = myStringReader.getInt("id");
+        Log.e("DEVE0304", "MainActivity.testJson() : " + myStringReader.getString("name"));
         } catch (Exception e) {
-            e.getMessage();
+            Log.e("TAG", "erreur"+ e.getMessage());
         }
 
 };
